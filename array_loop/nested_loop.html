@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nested Loop (Simple Version)</title>
+</head>
+<body>
+    <script>
+        // Example 1: Display pair of numbers
+        for(let i = 1; i <= 2; i++) {
+            for(let j = 1; j <= 4; j++) {
+                console.log("i = " + i + ", j = " + j);
+            }
+        }
+
+        // Example 2: Print stars in 4x4 pattern
+        for(let i = 1; i <= 4; i++) {
+            let stars = "";
+            for(let j = 1; j <= 4; j++) {
+                stars += "* ";
+            }
+            console.log(stars);
+        }
+
+        // Example 3: Multiplication table (4 and 5)
+        for (let i = 4; i <= 5; i++) {
+            for (let j = 1; j <= 5; j++) {
+                console.log(i + " x " + j + " = " + (i * j));
+            }
+            console.log("----------");
+        }
+
+        // Example 4: Number triangle pattern
+        for (let i = 1; i <= 5; i++) {
+            let line = "";
+            for (let j = 1; j <= i; j++) {
+                line += i + " ";
+            }
+            console.log(line);
+        }
+
+    </script>
+</body>
+</html>

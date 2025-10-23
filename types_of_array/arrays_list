@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Practice</title>
+</head>
+<body>
+    <h2>Array Methods Example</h2>
+
+    <script>
+       
+        let fruits = ["Apple", "Banana", "Mango"];
+        console.log("Original array:", fruits);
+
+        
+        fruits.push("Orange");
+        console.log("After push:", fruits);
+
+        
+        fruits.pop();
+        console.log("After pop:", fruits);
+
+        
+        fruits.unshift("Pineapple");
+        console.log("After unshift:", fruits);
+
+       
+        fruits.shift();
+        console.log("After shift:", fruits);
+
+        
+       
+    </script>
+</body>
+</html>
