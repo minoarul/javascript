@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Find Filter Reduce Example</title>
+</head>
+<body>
+    <h1>find,reduce,filter</h1>
+  <script>
+    const numbers1 = [10, 20, 30, 40, 50];
+    console.log(numbers1.find(num => num > 25));
+
+    const numbers2 = [5, 15, 25, 35, 45];
+    console.log(numbers2.find(num => num < 20));
+
+    const fruits1 = ["apple", "banana", "grape", "mango"];
+    console.log(fruits1.find(fruit => fruit === "grape"));
+
+    const evenNumbers = [2, 4, 6, 8, 10];
+    console.log(evenNumbers.find(num => num === 8));
+
+    const numbers3 = [1, 2, 3, 4, 5, 6];
+    console.log(numbers3.filter(num => num % 2 === 0));
+
+    const numbers4 = [10, 15, 20, 25, 30];
+    console.log(numbers4.filter(num => num > 20));
+
+    const animals = ["cat", "dog", "cow", "duck"];
+    console.log(animals.filter(animal => animal.includes("d")));
+
+    const prices = [100, 200, 50, 300];
+    console.log(prices.filter(price => price >= 100));
+
+    const numbers5 = [1, 2, 3, 4];
+    console.log(numbers5.reduce((a, b) => a + b));
+
+    const numbers6 = [5, 2, 1];
+    console.log(numbers6.reduce((a, b) => a * b));
+
+    const numbers7 = [10, 50, 20];
+    console.log(numbers7.reduce((a, b) => a > b ? a : b));
+
+    const names = ["Mino", "Arul", "Selvan"];
+    console.log(names.reduce((a, b) => a + " " + b));
+  </script>
+</body>
+</html>
