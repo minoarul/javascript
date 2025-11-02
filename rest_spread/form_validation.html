@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Form Validation</title>
+</head>
+
+<body style="font-family: Arial; background-color: #f3f4f6; text-align: center;">
+
+  <h2>Form Validation by L. Mino Arul Selvan</h2>
+
+  <form id="minoForm"
+    style="display: flex; flex-direction: column; gap: 20px; justify-content: center; align-items: center; margin-top: 20px;">
+    
+    <label>Enter your full name :</label>
+    <input type="text" id="name" placeholder="L. Mino Arul Selvan" style="width: 220px; height: 25px;">
+
+    <label>Enter your email :</label>
+    <input type="email" id="email" placeholder="minoarulselvan@gmail.com" style="width: 220px; height: 25px;">
+
+    <label>Enter your age :</label>
+    <input type="number" id="age" placeholder="Must be above 18" style="width: 220px; height: 25px;">
+
+    <label>Enter your mobile number :</label>
+    <input type="tel" id="mobile" placeholder="10-digit mobile number" style="width: 220px; height: 25px;">
+
+    <label>Enter your address :</label>
+    <textarea id="address" placeholder="Hostel, College Campus" style="width: 220px; height: 70px;"></textarea>
+
+    <label>Choose your gender :</label>
+    <select id="gender" style="width: 220px; height: 25px;">
+      <option value="" selected disabled>Choose one</option>
+      <option value="male">Male</option>
+      <option value="female">Female</option>
+      <option value="other">Other</option>
+    </select>
+
+    <button id="btn" type="submit" style="width: 120px; height: 35px; background-color: #007BFF; color: white; border: none; border-radius: 5px;">Register</button>
+    <p id="message"></p>
+  </form>
+
+  <script>
+    const form = document.getElementById("minoForm");
+    const message = document.getElementById("message");
+
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+
+      const name = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const age = document.getElementById("age").value.trim();
+      const mobile = document.getElementById("mobile").value.trim();
+      const address = document.getElementById("address").value.trim();
+      const gender = document.getElementById("gender").value;
+
+      // Validation
+      if (!name || !email || !age || !mobile || !address || !gender) {
+        message.innerText = "⚠️ Please fill out all fields before submitting.";
+        message.style.color = "red";
+        return;
+      }
+
+      if (age < 18) {
+        message.innerText = "🚫 Age must be above 18.";
+        message.style.color = "red";
+        return;
+      }
+
+      if (mobile.length !== 10) {
+        message.innerText = "📱 Mobile number must contain exactly 10 digits.";
+        message.style.color = "red";
+        return;
+      }
+
+      message.innerText = "✅ Form submitted successfully!";
+      message.style.color = "green";
+      alert("Welcome, " + name + "! Your form has been successfully submitted.");
+      form.reset();
+    });
+  </script>
+
+</body>
+</html>

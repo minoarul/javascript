@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flower Form Handling</title>
+</head>
+<body>
+    <h2>Flower Finder (Form Handling Example)</h2>
+
+    <form id="flowerForm">
+        <input type="text" id="flowerInput" placeholder="Enter flower name">
+        <button type="submit">Show</button>
+    </form>
+
+    <p id="result"></p>
+    <img id="flowerImg" src="" alt="" width="200" height="200">
+
+    <script>
+        const flowerForm = document.getElementById("flowerForm");
+
+        flowerForm.addEventListener("submit", function(event) {
+            event.preventDefault(); // stop form from reloading the page
+
+            const flowerName = document.getElementById("flowerInput").value.trim().toLowerCase();
+            const resultText = document.getElementById("result");
+            const flowerImg = document.getElementById("flowerImg");
+
+            const flowers = {
+                rose: "https://upload.wikimedia.org/wikipedia/commons/b/bf/Red_rose.jpg",
+                lily: "https://upload.wikimedia.org/wikipedia/commons/4/4c/Lilium_candidum_3.jpg",
+                lotus: "https://upload.wikimedia.org/wikipedia/commons/d/d7/Nelumbo_nucifera_flower.jpg",
+                jasmine: "https://upload.wikimedia.org/wikipedia/commons/0/0c/Jasminum_sambac_2.jpg",
+                hibiscus: "https://upload.wikimedia.org/wikipedia/commons/6/6e/Hibiscus_rosa-sinensis_flower.jpg",
+                marigold: "https://upload.wikimedia.org/wikipedia/commons/b/b5/Marigold_flower_02.jpg",
+                sunflower: "https://upload.wikimedia.org/wikipedia/commons/4/40/Sunflower_sky_backdrop.jpg",
+                oleander: "https://upload.wikimedia.org/wikipedia/commons/8/8a/Nerium_oleander_flowers.JPG",
+                tuberose: "https://upload.wikimedia.org/wikipedia/commons/8/8d/Polianthes_tuberosa_flowers.jpg",
+                crossandra: "https://upload.wikimedia.org/wikipedia/commons/7/7d/Crossandra_infundibuliformis_01.JPG"
+            };
+
+            if (flowers[flowerName]) {
+                resultText.textContent = "You selected: " + flowerName;
+                flowerImg.src = flowers[flowerName];
+            } else {
+                resultText.textContent = "Sorry, '" + flowerName + "' is not found.";
+                flowerImg.src = "";
+            }
+        });
+    </script>
+</body>
+</html>

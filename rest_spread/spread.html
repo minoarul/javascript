@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mino Spread Operator Example</title>
+</head>
+<body>
+    <h1>Spread Operator </h1>
+
+    <script>
+        // Example 1: Basic Spread Operator
+        const minoNumbers = [10, 20, 30, 40, 50];
+        const [...nums] = minoNumbers;
+        console.log('My Numbers:', ...nums);
+
+        // Example 2: Hobbies with spread
+        const hobbies = ["Gym", "Coding", "Music", "Cycling"];
+        const [firstHobby, ...otherHobbies] = hobbies;
+        console.log('Favorite Hobby:', firstHobby);
+        console.log('Other Hobbies:', ...otherHobbies);
+
+        // Example 3: Favorite drinks
+        const drinks = ["Tea", "Juice", "Milkshake"];
+        const [...favDrinks] = drinks;
+        console.log('My Drinks:', ...favDrinks);
+
+        // Example 4: Favorite snacks
+        const snacks = ["Vada", "Samosa", "Biscuits"];
+        const [...favSnacks] = snacks;
+        console.log('My Snacks:', ...favSnacks);
+
+        // Example 5: My full name
+        const myName = ["Mino", "Arul", "Selvan"];
+        const [...fullName] = myName;
+        console.log('My Name:', ...fullName);
+
+        // Example 6: Lucky numbers
+        const lucky = [7, 17, 27, 37];
+        const [...luckyNums] = lucky;
+        console.log('Lucky Numbers:', ...luckyNums);
+
+        // Example 7: Nickname
+        const nick = ["Selva"];
+        const [...nickName] = nick;
+        console.log('My Nickname:', ...nickName);
+
+        // Example 8: Favorite vehicles
+        const vehicles = ["Bike", "Car", "Cycle"];
+        const [...favVehicles] = vehicles;
+        console.log('My Vehicles:', ...favVehicles);
+
+        // Example 9: Favorite foods
+        const foods = ["Rice", "Idli", "Dosa", "Poori"];
+        const [...favFoods] = foods;
+        console.log('My Favorite Foods:', ...favFoods);
+
+        // Example 10: Dream destinations
+        const places = ["Chennai", "Bangalore", "Goa"];
+        const [...dreamPlaces] = places;
+        console.log('Dream Travel Places:', ...dreamPlaces);
+    </script>
+</body>
+</html>

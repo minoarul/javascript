@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mino – Destructuring Example</title>
+</head>
+<body style="font-family: Arial; background-color: #f8fafc; padding: 20px;">
+    <h1>Destructuring Examples by L. Mino Arul Selvan</h1>
+
+    <!-- 20 paragraphs -->
+    <p id="display1"></p>
+    <p id="display2"></p>
+    <p id="display3"></p>
+    <p id="display4"></p>
+    <p id="display5"></p>
+    <p id="display6"></p>
+    <p id="display7"></p>
+    <p id="display8"></p>
+    <p id="display9"></p>
+    <p id="display10"></p>
+    <p id="display11"></p>
+    <p id="display12"></p>
+    <p id="display13"></p>
+    <p id="display14"></p>
+    <p id="display15"></p>
+    <p id="display16"></p>
+    <p id="display17"></p>
+    <p id="display18"></p>
+    <p id="display19"></p>
+    <p id="display20"></p>
+
+    <script>
+        // Shortcut for getting element by ID
+        const $ = id => document.getElementById(id);
+
+        // 1. Basic array destructuring
+        const numbers = [10, 20, 30, 40, 50];
+        const [...nums] = numbers;
+        $("display1").innerHTML = `My favorite numbers are ${nums.join(", ")}`;
+
+        // 2. Hobbies
+        const hobbies = ["Coding", "Gym", "Cycling"];
+        const [firstHobby, ...restHobbies] = hobbies;
+        $("display2").innerHTML = `My top hobby is ${firstHobby}, and I also enjoy ${restHobbies.join(", ")}`;
+
+        // 3. Favorite foods
+        const foods = ["Rice", "Idli", "Dosa"];
+        const [...favFoods] = foods;
+        $("display3").innerHTML = `My favorite foods are ${favFoods.join(", ")}`;
+
+        // 4. Favorite drinks
+        const drinks = ["Tea", "Juice", "Milk"];
+        const [...favDrinks] = drinks;
+        $("display4").innerHTML = `My favorite drinks are ${favDrinks.join(", ")}`;
+
+        // 5. My full name
+        const myName = ["L.", "Mino", "Arul", "Selvan"];
+        const [...fullName] = myName;
+        $("display5").innerHTML = `My full name is ${fullName.join(" ")}`;
+
+        // 6. Lucky numbers (✅ fixed line)
+        const lucky = [7, 17, 27];
+        const [...luckyNums] = lucky;
+        $("display6").innerHTML = `My lucky numbers are ${luckyNums.join(", ")}`;
+    </script>
+</body>
+</html>

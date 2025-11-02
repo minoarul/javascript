@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mino Rest Operator Example</title>
+</head>
+<body>
+    <h1>Rest Operator</h1>
+
+    <script>
+        // Example 1: Find even numbers using Rest Operator
+        const minoEven = (...numbers) => {
+            const evenNums = numbers.filter(num => num % 2 === 0);
+            console.log('Even Numbers:', evenNums);
+        }
+        minoEven(10, 13, 22, 35, 46, 59);
+
+        // Example 2: Find total sum using Rest Operator
+        const minoSum = (...values) => {
+            const total = values.reduce((sum, num) => sum + num, 0);
+            console.log('Total Sum:', total);
+        }
+        minoSum(50, 100, 150, 200);
+
+        // Example 3: Print elements with their index
+        const minoList = (...items) => {
+            items.forEach((item, index) => {
+                console.log(`Index ${index} → Value: ${item}`);
+            });
+        }
+        minoList('Tea', 'Snacks', 'Milk', 'Coffee', 'Juice');
+
+        // Example 4: Display all values using map
+        const minoDisplay = (...data) => {
+            data.map((val) => console.log('Data:', val));
+        }
+        minoDisplay('Selvan', 'Coding', 'Gym', 'Cybersecurity', 'Data Science');
+    </script>
+</body>
+</html>
