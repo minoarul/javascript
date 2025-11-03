@@ -57,24 +57,24 @@
 
       // Validation
       if (!name || !email || !age || !mobile || !address || !gender) {
-        message.innerText = "⚠️ Please fill out all fields before submitting.";
+        message.innerText = " Please fill out all fields before submitting.";
         message.style.color = "red";
         return;
       }
 
       if (age < 18) {
-        message.innerText = "🚫 Age must be above 18.";
+        message.innerText = " Age must be above 18.";
         message.style.color = "red";
         return;
       }
 
       if (mobile.length !== 10) {
-        message.innerText = "📱 Mobile number must contain exactly 10 digits.";
+        message.innerText = "Mobile number must contain exactly 10 digits.";
         message.style.color = "red";
         return;
       }
 
-      message.innerText = "✅ Form submitted successfully!";
+      message.innerText = " Form submitted successfully!";
       message.style.color = "green";
       alert("Welcome, " + name + "! Your form has been successfully submitted.");
       form.reset();
