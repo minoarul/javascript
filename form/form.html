@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problems of Environment</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .parent {
+            background-color: lightcoral;
+            height: 700px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .form {
+            background-color: lightgray;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 400px;
+            height: 450px;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .form input,
+        .form textarea {
+            background-color: lightgoldenrodyellow;
+            width: 200px;
+            padding: 5px;
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="parent" id="parent">
+
+        <form id="myform" class="form">
+            <div class="data">
+                <label>Enter your name :</label>
+                <input id="name" type="text" placeholder="In capital word">
+            </div>
+
+            <div class="data">
+                <label>Enter your Mobile no :</label>
+                <input id="mobile" type="tel" placeholder="Enter mobile no ">
+            </div>
+
+            <div class="data">
+                <label>Enter the Problem :</label>
+                <textarea id="problem" required style="height: 40px;"></textarea>
+            </div>
+
+            <div class="data">
+                <label>Where it Happens in the city :</label>
+                <textarea required id="city" style="height: 40px;"></textarea>
+            </div>
+
+            <div class="data">
+                <label>How do you know :</label>
+                <textarea required id="know" style="height: 40px;"></textarea>
+            </div>
+
+            <div class="data">
+                <label>Review the Problem:</label>
+                <textarea required id="review" style="height: 50px;"></textarea>
+            </div>
+
+            <button id="btn" type="submit"
+                style="background-color: black;color: white;height: 30px;width: 70px;">Login</button>
+
+            <p id="para"></p>
+        </form>
+
+    </div>
+
+    <script>
+
+        const form = document.getElementById("myform")
+        const para = document.getElementById("para")
+
+        form.addEventListener("submit", (e) => {
+            e.preventDefault();
+
+            const username = document.getElementById("name").value.trim()
+            const mobile = document.getElementById("mobile").value.trim()
+            const problem = document.getElementById("problem").value.trim()
+            const happens = document.getElementById("city").value.trim()
+            const know = document.getElementById("know").value.trim()
+            const review = document.getElementById("review").value.trim()
+
+            if (!username || !mobile || !problem || !happens || !know || !review) {
+                para.innerText = "Please fill all fields before submitting";
+                para.style.color = "blue";
+                return;
+            }
+
+            if (mobile.length !== 10) {
+                para.innerText = "Mobile number must be exactly 10 digits";
+                para.style.color = "blue";
+                return;
+            }
+
+            const data = JSON.parse(localStorage.getItem("formdata")) || [];
+            const storedata = { username, mobile, problem, happens, know, review }
+
+            data.push(storedata);
+            localStorage.setItem("formdata", JSON.stringify(data));
+
+            alert("Successfully submitted");
+            form.reset();
+            window.location.href = "table.html";
+        })
+    </script>
+
+</body>
+
+</html>
